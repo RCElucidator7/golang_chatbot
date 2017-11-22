@@ -23,7 +23,7 @@ form.keypress(function(event){
                 list.append(newItem)
             }, 2000);
         }).fail(function(){
-            const newItem = "<li class='list-group-item list-group-item-danger' >Sorry I'm not home right now.</li>";
+            const newItem = "<li class='list-group-item list-group-item-danger'>Unavailable.</li>";
             list.append(newItem);
         });
 });

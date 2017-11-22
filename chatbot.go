@@ -2,23 +2,19 @@ package main
 
 import (
 	"regexp"
-	"time"
+	//"time"
 	"math/rand"
     "strings"
 	"net/http"
-	"html/template"
+	"fmt"
 )
 
 type text struct{
 	input string
 }
 
-func ElizaResponse(input string, w http.ResponseWriter, r *http.Request) string {
-    
-    //Parse the input that the user inputs in the webpage
-	r.ParseForm();
-	guess := r.FormValue("input")
-    
+func ElizaResponse(input string) string {
+    guess := input
     //array of responses the eliza program will respond with
 	responses := []string{
 		"I’m not sure what you’re trying to say. Could you explain it to me?",
@@ -39,11 +35,6 @@ func ElizaResponse(input string, w http.ResponseWriter, r *http.Request) string 
 	if (father) {
 		return("Why don’t you tell me more about your father?")
 	}
-
-	//Puts the data into the guess.tmpl file
-	m := text{input: responses[rand.Intn(len(responses))]}
-	t, _ := template.ParseFiles("chatbot.tmpl")
-	t.Execute(w, m)
 
 	//returns the responses to the main function
 	return responses[rand.Intn(len(responses))]
@@ -89,12 +80,19 @@ func reflection(input string) string{
 	return (counterResp[rand.Intn(len(counterResp))] + answer)
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "chatbot.html")
+
+func elizaHandler(w http.ResponseWriter, r *http.Request) {
+	
+		userResponse := r.URL.Query().Get("input")
+		elizaResponse := ElizaResponse(userResponse)
+
+		fmt.Fprintf(w, elizaResponse)
 }
 
 func main() {
-    rand.Seed(time.Now().UTC().UnixNano())
-    http.HandleFunc("/", handler)
+    // Webpage Directory
+	fs := http.FileServer(http.Dir("./static"))
+	http.Handle("/", fs)
+	http.HandleFunc("/chatbot", elizaHandler)
     http.ListenAndServe(":8080", nil)
 }
