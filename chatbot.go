@@ -14,7 +14,7 @@ type text struct{
 }
 
 func ElizaResponse(input string) string {
-    guess := input
+    //guess := input
     //array of responses the eliza program will respond with
 	responses := []string{
 		"I’m not sure what you’re trying to say. Could you explain it to me?",
@@ -22,7 +22,7 @@ func ElizaResponse(input string) string {
 		"Why do you say that?",
 	}
 
-	iam := regexp.MustCompile("(?i)i(?:'| a|)?m(.*)")
+	/*iam := regexp.MustCompile("(?i)i(?:'| a|)?m(.*)")
 	if iam.MatchString(guess) {
 		return iam.ReplaceAllString(input, "How do I know you are $1")
 	}
@@ -34,7 +34,7 @@ func ElizaResponse(input string) string {
 	//if the user input contains the word "father" it will return this string
 	if (father) {
 		return("Why don’t you tell me more about your father?")
-	}
+	}*/
 
 	//returns the responses to the main function
 	return responses[rand.Intn(len(responses))]
@@ -83,8 +83,8 @@ func reflection(input string) string{
 
 func elizaHandler(w http.ResponseWriter, r *http.Request) {
 	
-		userResponse := r.URL.Query().Get("input")
-		elizaResponse := ElizaResponse(userResponse)
+		userInput := r.URL.Query().Get("input")
+		elizaResponse := ElizaResponse(userInput)
 
 		fmt.Fprintf(w, elizaResponse)
 }
