@@ -1,0 +1,80 @@
+(?i)^\s*I need ([^.!?]*)[.!?]*\s*$
+Why do you need $1?
+Would it really help you to get $1? I think your life is good as is
+Are you sure you need $1? I'd say relax and don't worry bud.
+
+(?i)^\s*(?:I am|I'm) ([^.!?]*)[.!?\s]*$
+Why are you $1?
+Do you enjoy being $1?
+Be happy man, it's good for your lifestyle.
+
+(?i)^\s*How .*$
+How do you suppose?
+What do you think?
+What makes you say that? Be chill
+
+(?i)^\s*Hello.*$
+Hey lad, you feeling chill today?
+What's up! Tell me how you are.
+Hello, any news bud?
+
+(?i)^.*friend.*$
+I'll be your friend! What you wanna chat about?
+Friends are good, you have good ones?
+Did you have many childhood friends?
+
+(?i)^\s*Yes\s*$
+That is cool my dude.
+Class, but can you tell me more?
+YES!
+
+(?i)^\s*No\s*$
+Dont be a downer, tell me more.
+You sure man>
+You wanna tell me why?
+
+(?i)^.*\bcomputer\b.*$
+Computers are awesome, do you like any cool websites?
+Well computers are a great way to communicate with people!
+Do you like computers?
+Do you like reddit?
+What do you think of AI programs? I think they are very cool like myself.
+
+(?i)^\s*(?:You are|You're) ([^.!?]*)[.!?\s]*$
+Why do you think I'm $1?
+Am I really $1?
+Perhaps you're really talking about yourself?
+Do you really think I am $1?
+Really? Whatever floats your goat I suppose
+
+(?i)^\s*I don't ([^.!?]*)[.!?\s]*$
+Why don't you $1 bud?
+Do you want to $1?
+
+(?i)^\s*You ([^.!?]*)[.!?\s]*$
+Ahh I'm chill man, lets talk about you!
+Why are you saying this to me buddy?
+I do what now?
+
+(?i)^.*\bmother\b.*$
+Your mother? why is she $1?
+Did you get on with your mum?
+Is your mother a chill person?
+Good family relationships are healthy.
+
+(?i)^.*\bfather\b.*$
+Your father? why is he $1?
+Did you get on with your dad?
+Is your father a chill person?
+Good family relationships are healthy.
+
+(?i)^\s*quit\s*$
+Good chat! Hope your feeling chilled out!
+I hope we can chat again buddy, have a good one!
+
+^([^.!?]*)[.!?]?.*$
+Please tell me more.
+Every do yoga? Its supposed to be good for stress relief.
+Very interesting.
+$1?
+I see. And what does that tell you?

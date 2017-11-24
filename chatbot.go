@@ -7,6 +7,8 @@ import (
 	"regexp"
 	"time"
 	"math/rand"
+	"strings"
+	"strconv"
 	"net/http"
 	"fmt"
 )
@@ -16,11 +18,16 @@ type Pronoun struct {
 	newPronouns []string
 }
 
+type Eliza struct {
+	responses     []Pronoun
+	wordSwitch []Pronoun
+}
+
 //Reads a .txt file and casts the string values into an array
-func readPronouns(path string) []Pronoun {
+func readPronouns(filePath string) []Pronoun {
 	//Adapted from https://stackoverflow.com/questions/5884154/read-text-file-into-string-array-and-write
 	//Opens the given file, log error if it fails
-	file, err := os.Open(path)
+	file, err := os.Open(filePath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -49,11 +56,51 @@ func readPronouns(path string) []Pronoun {
 	return switchPros
 }
 
+//Response function, generates elizas answer
+func (me *Eliza) E_Responder(input string) string {
+	//Loop to control and find a response
+	for _, response := range me.responses {
+		//If to check if the user input matches anything
+		if matchFound := response.userPronouns.FindStringSubmatch(input); matchFound != nil {
+			//Regexp
+			boundaries := regexp.MustCompile(`[\s,.?!]+`)
+			//Gets a random response from the botResponses.txt
+			e_answer := response.newPronouns[rand.Intn(len(response.newPronouns))]
+			//Loop to switch the pronouns 
+			for m, match := range matchFound[1:] {
+				tokens := boundaries.Split(match, -1)
+				for t, token := range tokens {
+					for _, substitution := range me.wordSwitch {
+						if substitution.userPronouns.MatchString(token) {
+							tokens[t] = substitution.newPronouns[rand.Intn(len(substitution.newPronouns))]
+							break
+						}
+					}
+				}
+				e_answer = strings.Replace(e_answer, "$"+strconv.Itoa(m+1), strings.Join(tokens, " "), -1)
+			
+			}
+			return e_answer
+		
+		}
+	}
+	return "I cannot answer you."
+}
+
+func ElizaFromFiles(responsesPath string, pronounPath string) Eliza {
+	
+	getResponse := Eliza{}
+	getResponse.wordSwitch = readPronouns(pronounPath)
+	getResponse.responses = readPronouns(responsesPath)
+
+	return getResponse
+}
 
 func elizaHandler(w http.ResponseWriter, r *http.Request) {
 	
 		userInput := r.URL.Query().Get("input")
-		fmt.Fprintf(w, userInput)
+		eliza := ElizaFromFiles("botResponses.txt", "pronouns.txt")
+		fmt.Fprintf(w, eliza.E_Responder(userInput))
 }
 
 func main() {
@@ -64,7 +111,6 @@ func main() {
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fs)
 	http.HandleFunc("/chatbot", elizaHandler)
-
 	http.ListenAndServe(":8080", nil)
 	
 }

@@ -1,0 +1,56 @@
+(?i)^i$
+you
+
+(?i)^you$
+I
+
+(?i)^were$
+was
+
+(?i)^am$
+are
+
+(?i)^are$
+am
+
+(?i)^was$
+were
+
+(?i)^were$
+was
+
+(?i)^I'?m$
+you are
+
+(?i)^you'?re$
+I am
+
+(?i)^you$
+me
+
+(?i)^my$
+your
+
+(?i)^[Mm]e$
+you
+
+(?i)^you'?ve$
+I have
+
+(?i)^you'?ll$
+I will
+
+(?i)^your$
+my
+
+(?i)^yours$
+mine
+
+(?i)^myself$
+yourself
+
+(?i)^any$
+some
+
+(?i)^some$
+any
