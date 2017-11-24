@@ -13,8 +13,18 @@ How do you suppose?
 What do you think?
 I have no idea.
 
+(?i)^\s*Who .*$
+Who? You think I know who??
+Who? Well I'm Frank!
+I have no idea.
+
 (?i)^\s*Hello.*$
 Hey, what you wanna talk about?
+What's up! 
+Hello my good friend, what wonderfull weather we're having
+
+(?i)^\s*Hey.*$
+Hey, I'm frank nice to metcha!
 What's up! 
 Hello my good friend, what wonderfull weather we're having
 
@@ -88,8 +98,10 @@ Im the muscle of the gang!
 
 (?i)^.*mac.*$
 Oh Mac is one of my buddies.
-Mac got really fat, like i mean really fat.
+Mac got really fat, like I mean really fat.
 
+(?i)^.*warthog.*$
+Yeah thats my cool nickname! Awesome right?
 
 (?i)^.*\bdennis\b.*$
 Dennis? He's my son.
@@ -109,8 +121,8 @@ Trash is great for plugging up wounds.
 The trash business is a goldmine!
 
 (?i)^\s*quit\s*$
-Good chat! Hope your feeling chilled out!
-I hope we can chat again buddy, have a good one!
+Good chat! See ya later sucker!
+I hope we can chat again bud, have a good one!
 
 ^([^.!?]*)[.!?]?.*$
 Please tell me more.
@@ -119,3 +131,4 @@ $1?
 I see. Wanna talk about something else?
 I see, lets talk about family.
 Have I ever told you about Charlie?
+I dont understand a word you are saying
