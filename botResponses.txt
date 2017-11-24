@@ -8,10 +8,18 @@ Why are you $1?
 Do you enjoy being $1?
 $? Haha!
 
+(?i)^\s*I like ([^.!?]*)[.!?]*\s*$
+You like $1? Haha you loser!
+Why do you like $1?
+
 (?i)^\s*How .*$
 How do you suppose?
 What do you think?
 I have no idea.
+
+(?i)^\s*Cool .*$
+Your God dam right its Cool.
+I am cool arent i?
 
 (?i)^\s*Who .*$
 Who? You think I know who??
