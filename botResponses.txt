@@ -12,6 +12,10 @@ $? Haha!
 You like $1? Haha you loser!
 Why do you like $1?
 
+(?i)^\s*I hate ([^.!?]*)[.!?]*\s*$
+Hate is such a strong term, I prefer to say ITS TRASH!
+Why do you hate $1?
+
 (?i)^\s*How .*$
 How do you suppose?
 What do you think?
@@ -128,9 +132,10 @@ I once saw a man pick up a trash can and throw it at another guys head. There wa
 Trash is great for plugging up wounds.
 The trash business is a goldmine!
 
-(?i)^\s*quit\s*$
+(?i)^\s*goodbye\s*$
 Good chat! See ya later sucker!
-I hope we can chat again bud, have a good one!
+I hope we can chat again, have a good one!
+Oh thank God!
 
 ^([^.!?]*)[.!?]?.*$
 Please tell me more.

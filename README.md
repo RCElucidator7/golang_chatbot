@@ -27,5 +27,6 @@ I used these sites to study Eliza and gain the nessessary information I needed t
     (https://stackoverflow.com/)
     (https://www.w3schools.com/jquery/)
 
-#Tips
+# Tips
 If the conversation seems to be going nowhere, try using some key things to talk about like "Trash"
+Also if you want to end the conversation, just say "Goodbye"!
