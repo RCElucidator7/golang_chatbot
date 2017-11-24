@@ -1,44 +1,37 @@
 (?i)^\s*I need ([^.!?]*)[.!?]*\s*$
 Why do you need $1?
-Would it really help you to get $1? I think your life is good as is
-Are you sure you need $1? I'd say relax and don't worry bud.
+Would it really help you to get $1?
+Are you sure you need $1?
 
 (?i)^\s*(?:I am|I'm) ([^.!?]*)[.!?\s]*$
 Why are you $1?
 Do you enjoy being $1?
-Be happy man, it's good for your lifestyle.
+$? Haha!
 
 (?i)^\s*How .*$
 How do you suppose?
 What do you think?
-What makes you say that? Be chill
+I have no idea.
 
 (?i)^\s*Hello.*$
-Hey lad, you feeling chill today?
-What's up! Tell me how you are.
-Hello, any news bud?
+Hey, what you wanna talk about?
+What's up! 
+Hello my good friend, what wonderfull weather we're having
 
 (?i)^.*friend.*$
-I'll be your friend! What you wanna chat about?
-Friends are good, you have good ones?
-Did you have many childhood friends?
+I'm good friends with Charlie!
+I'm good friends with Mac!
+Friends are great, I'm glad I have Charlie, Mac, Dee and Dennis.
 
 (?i)^\s*Yes\s*$
 That is cool my dude.
-Class, but can you tell me more?
+Yes I'm glad we agree!
 YES!
 
 (?i)^\s*No\s*$
-Dont be a downer, tell me more.
-You sure man>
+Dont be a downer.
+You sure?
 You wanna tell me why?
-
-(?i)^.*\bcomputer\b.*$
-Computers are awesome, do you like any cool websites?
-Well computers are a great way to communicate with people!
-Do you like computers?
-Do you like reddit?
-What do you think of AI programs? I think they are very cool like myself.
 
 (?i)^\s*(?:You are|You're) ([^.!?]*)[.!?\s]*$
 Why do you think I'm $1?
@@ -48,25 +41,72 @@ Do you really think I am $1?
 Really? Whatever floats your goat I suppose
 
 (?i)^\s*I don't ([^.!?]*)[.!?\s]*$
-Why don't you $1 bud?
+Why don't you $1?
 Do you want to $1?
 
 (?i)^\s*You ([^.!?]*)[.!?\s]*$
-Ahh I'm chill man, lets talk about you!
-Why are you saying this to me buddy?
+Yeah sure I $1
+Why are you saying this to me you bozo?
 I do what now?
 
-(?i)^.*\bmother\b.*$
-Your mother? why is she $1?
-Did you get on with your mum?
-Is your mother a chill person?
-Good family relationships are healthy.
-
 (?i)^.*\bfather\b.*$
-Your father? why is he $1?
-Did you get on with your dad?
-Is your father a chill person?
-Good family relationships are healthy.
+Yeah I'm the father of Dee and Denis.
+Yeah I'm the Daddy of the group.
+
+(?i)^.*\bchildren\b.*$
+Yeah I'm the father of Dee and Denis.
+I have a son called Dennis and a daughter called dee.
+
+(?i)^.*\bcharlie\b.*$
+Charlie is my roommate.
+Charlie might actually be my biological son, how whacky is that??
+I once tricked Charlie and Dee into eating what they thought was human meat, but it was actually racoon hahaha!
+Ah yes my crab fishing buddy!
+We're the "Gruesome Twosome"!
+We got married once.
+Charlie, he's my buddy, we sleep together, we hang out together.
+
+(?i)^.*\bfamily\b.*$
+Yeah I'm the father of Dee and Denis.
+I have a son called Dennis and a daughter called dee.
+
+(?i)^.*\bfunny\b.*$
+You think I'm funny??
+Oh I'm flattered.
+
+(?i)^\s*Why .*$
+Waddya mean why?? You tell me!
+Why? Well I dont know!
+I have no idea why.
+
+(?i)^.*frank.*$
+Yes I am Frank Reynolds.
+Yeah waddya want?
+I'm FRACK
+I prefer to be called "The Warthog"
+Im the muscle of the gang!
+
+(?i)^.*mac.*$
+Oh Mac is one of my buddies.
+Mac got really fat, like i mean really fat.
+
+
+(?i)^.*\bdennis\b.*$
+Dennis? He's my son.
+Yeah waddya want?
+Oh so you have heard of me?
+
+(?i)^.*\bdee\b.*$
+Dee? He's my son. Wait no shes my daughter.
+I married her once, I dont like to talk about it though.
+I had to waterboard her once.
+
+(?i)^.*trash.*$
+I'm the TRASH man! I come out and throw trash all over the ring, and then I eat some garbage.
+I'm not gonna be burried in a grave. When I'm dead, just throw me in the trash.
+I once saw a man pick up a trash can and throw it at another guys head. There was blood everywhere.
+Trash is great for plugging up wounds.
+The trash business is a goldmine!
 
 (?i)^\s*quit\s*$
 Good chat! Hope your feeling chilled out!
@@ -74,7 +114,8 @@ I hope we can chat again buddy, have a good one!
 
 ^([^.!?]*)[.!?]?.*$
 Please tell me more.
-Every do yoga? Its supposed to be good for stress relief.
-Very interesting.
+Thats trash talk, lets talk about actual trash!
 $1?
-I see. And what does that tell you?
+I see. Wanna talk about something else?
+I see, lets talk about family.
+Have I ever told you about Charlie?

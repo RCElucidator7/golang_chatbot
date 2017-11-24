@@ -17,7 +17,7 @@ form.keypress(function(event){
     const prompt = {"input" : userInput }
     $.get("/chatbot", prompt)
         .done(response => {
-            const output = "<li class='list-group-item  text-right list-group-item-warning'>" + response + " : Bot" + "</li>";
+            const output = "<li class='list-group-item  text-right list-group-item-warning'>" + response + " : Bot <img src=\'/assets/frank_id.png' style='width:50px;height:50px;'>" + "</li>";
             $("html, body").scrollTop($("body").height());
             setTimeout(function(){list.append(output)}, 2000);
         }).fail(() => {
